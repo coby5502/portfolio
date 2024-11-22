@@ -368,10 +368,10 @@ section {
     left: 0;
     right: 0;
     height: 80px;
-    background: rgba(17, 17, 17, 0.8);
+    background: rgba(17, 17, 17, 0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 100;
+    z-index: 1000;
 }
 
 .header .container {
@@ -383,12 +383,18 @@ section {
 
 .mobile-menu-btn {
     display: none;
-    background: none;
+    background: transparent;
     border: none;
     color: var(--text-color);
     font-size: 1.5rem;
     cursor: pointer;
     padding: var(--space-2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary-color);
 }
 
 /* Contact Links */
@@ -600,65 +606,87 @@ section {
 /* Mobile Menu */
 @media (max-width: 768px) {
     .header {
-        height: auto;
-        min-height: 60px;
+        height: 60px;
+        padding: 0;
     }
 
     .header .container {
+        padding: 0 1rem;
         position: relative;
-        padding: var(--space-3) var(--space-4);
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .language-selector {
+        margin-left: auto;
+        margin-right: 3.5rem;
     }
 
     .mobile-menu-btn {
         display: block;
         position: absolute;
-        right: var(--space-4);
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 101;
-    }
-
-    .logo {
-        font-size: 1.3rem;
-    }
-
-    .language-selector {
-        position: absolute;
-        right: calc(var(--space-4) + 40px);
-        top: 50%;
-        transform: translateY(-50%);
+        right: 1rem;
+        background: transparent;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 1001;
     }
 
     .nav {
         display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 60px;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.95);
+        background: rgba(17, 17, 17, 0.98);
         backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        padding: var(--space-4) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease;
     }
 
     .nav.active {
         display: block;
+        opacity: 1;
+        transform: none;
     }
 
     .nav ul {
         flex-direction: column;
-        gap: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
     }
 
     .nav-link {
         display: block;
-        padding: var(--space-3) var(--space-4);
-        font-size: 1.1rem;
+        padding: 1rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+        text-decoration: none;
+        border: none;
+        margin: 0;
+    }
+
+    .nav-link:hover, .nav-link:active {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--primary-color);
         opacity: 1;
     }
 
-    .nav-link:hover {
-        background: rgba(255, 255, 255, 0.05);
+    /* 구분선 제거 */
+    .nav ul li:not(:last-child) {
+        border-bottom: none;
     }
 
     /* 언어 선택 버튼 크기 조정 */
@@ -866,6 +894,78 @@ section {
     
     .skill-item {
         padding: 0.5rem 1rem;
+    }
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.logo {
+    font-size: 2rem;  /* 데스크탑에서 더 큰 크기 */
+    font-weight: 600;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;  /* 모바일에서는 기존 크기 유지 */
+    }
+
+    .nav {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(17, 17, 17, 0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav.active {
+        display: block;
+        opacity: 1;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 0;  /* 전체 ul의 패딩 제거 */
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav ul li {
+        margin: 0;  /* li의 마진 제거 */
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;  /* 전체 너비 사용 */
+        padding: 1rem 2rem;  /* 링크 내부의 패딩만 유지 */
+        color: var(--text-color);
+        opacity: 0.8;
+        transition: opacity 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
+    }
+
+    .nav-link:hover, .nav-link:active {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--primary-color);
+        opacity: 1;
     }
 }
  

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const langButtons = document.querySelectorAll('.lang-btn');
-    let currentLang = 'en'; // 기본 언어
+    let currentLang = 'en';
 
     // 언어 변경 함수
     function changeLanguage(lang) {
@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
             element.textContent = element.getAttribute(`data-${lang}`);
         });
 
-        // 활성 언어 버튼 스타일 변경
         langButtons.forEach(btn => {
             if (btn.getAttribute('data-lang') === lang) {
                 btn.classList.add('active');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // HTML lang 속성 업데이트
         document.documentElement.lang = lang;
     }
 
@@ -38,19 +36,51 @@ document.addEventListener('DOMContentLoaded', function() {
         changeLanguage('en');
     }
 
+    // 모바일 메뉴 관련
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    mobileMenuBtn.addEventListener('click', function() {
+    // 메뉴 토글 함수
+    function toggleMenu() {
         nav.classList.toggle('active');
+    }
+
+    // 메뉴 닫기 함수
+    function closeMenu() {
+        nav.classList.remove('active');
+    }
+
+    // 햄버거 메뉴 클릭 이벤트
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
 
-    // 네비게이션 링크 클릭시 모바일 메뉴 닫기
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                nav.classList.remove('active');
-            }
+    // 메뉴 항목 클릭시 닫기 및 스크롤
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            closeMenu(); // 메뉴 닫기
+            
+            // 부드러운 스크롤
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
     });
+
+    // 문서 클릭시 메뉴 닫기
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // 스크롤시 메뉴 닫기
+    window.addEventListener('scroll', closeMenu);
 }); 
