@@ -228,22 +228,34 @@ section {
 }
 
 .intro-title h1 {
-    font-size: clamp(1.5rem, 5vw, 2.8rem);
-    line-height: 1.1;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.2;
     margin-bottom: var(--space-4);
     color: var(--text-color);
+    font-weight: 700;
+    letter-spacing: -0.02em;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .intro-title .gradient-text {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
     margin-top: var(--space-2);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+/* 영어 모드일 때만 폰트 크기 조절 */
+html[lang="en"] .intro-title h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+html[lang="en"] .intro-title .gradient-text {
+    font-size: clamp(1.3rem, 3.5vw, 2.2rem);
 }
 
 .intro-description {
@@ -327,12 +339,15 @@ section {
     }
 
     .intro-title h1 {
-        font-size: clamp(1.2rem, 7vw, 2.2rem);
-        white-space: nowrap;
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+        text-align: center;
+        white-space: normal;
     }
 
     .intro-title .gradient-text {
-        font-size: 2rem;
+        font-size: clamp(1.3rem, 6vw, 2rem);
+        text-align: center;
+        white-space: normal;
     }
 
     .intro-description {
@@ -349,6 +364,15 @@ section {
         justify-content: center;
         padding: 0.8rem 1.5rem;
         min-width: 140px;
+    }
+
+    /* 모바일에서 영어 모드일 때 */
+    html[lang="en"] .intro-title h1 {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    html[lang="en"] .intro-title .gradient-text {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
     }
 }
 
@@ -731,7 +755,7 @@ section {
     }
 }
 
-/* 더 작은 화면에서의 조정 */
+/* 더 작은 화면에서의 조�� */
 @media (max-width: 480px) {
     .header .container {
         padding: var(--space-3) var(--space-3);
