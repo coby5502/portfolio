@@ -84,6 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 스크롤시 메뉴 닫기
     window.addEventListener('scroll', closeMenu);
 
+    // 이메일 복사 알림 메시지 다국어 설정
+    const copyMessages = {
+        ko: '이메일 주소가 복사되었습니다!',
+        en: 'Email address copied!',
+        ja: 'メールアドレスをコピーしました！'
+    };
+
     // 이메일 복사 기능
     const emailLink = document.querySelector('a[href^="mailto:"]');
     const emailAddress = emailLink.getAttribute('href').replace('mailto:', '');
@@ -91,12 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
     emailLink.addEventListener('click', function(e) {
         e.preventDefault();
         
+        // 현재 설정된 언어 확인
+        const currentLang = document.documentElement.lang || 'en';
+        
         // 이메일 주소 복사
         navigator.clipboard.writeText(emailAddress).then(() => {
-            // 복사 성공 알림 표시
+            // 현재 언어에 맞는 메시지로 알림 표시
             const notification = document.createElement('div');
             notification.className = 'copy-notification';
-            notification.textContent = '이메일 주소가 복사되었습니다!';
+            notification.textContent = copyMessages[currentLang] || copyMessages.en;
             document.body.appendChild(notification);
 
             // 3초 후 알림 제거
