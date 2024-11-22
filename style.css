@@ -968,4 +968,37 @@ section {
         opacity: 1;
     }
 }
+
+/* Experience Section */
+@media (max-width: 768px) {
+    .timeline-item {
+        padding: var(--space-4);  /* 패딩 줄임 */
+    }
+
+    .timeline-content h3 {
+        font-size: var(--font-size-lg);  /* 제목 크기 줄임 */
+        word-break: keep-all;  /* 단어 단위로 줄바꿈 */
+    }
+
+    .timeline-content h4 {
+        font-size: var(--font-size-base);
+        word-break: keep-all;
+    }
+
+    .timeline-content p {
+        font-size: var(--font-size-sm);  /* 본문 텍스트 크기 줄임 */
+        word-break: keep-all;
+        line-height: 1.6;
+    }
+
+    .tech-tags {
+        flex-wrap: wrap;  /* 태그 여러 줄로 표시 */
+        gap: var(--space-2);
+    }
+
+    .tech-tags span {
+        font-size: var(--font-size-xs);  /* 태그 텍스트 크기 줄임 */
+        padding: 0.25rem 0.6rem;  /* 태그 패딩 줄임 */
+    }
+}
  
