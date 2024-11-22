@@ -115,4 +115,48 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 3000);
         });
     });
+
+    // 기존 코드 유지하고 DOMContentLoaded 이벤트 핸들러 안에 추가
+    const modal = document.getElementById('readme-modal');
+    const modalContent = modal.querySelector('.readme-content');
+    const closeBtn = modal.querySelector('.modal-close');
+
+    // README 버튼 클릭 이벤트
+    document.querySelectorAll('.readme-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            const repo = e.currentTarget.dataset.repo;
+            try {
+                // GitHub API로 README 내용 가져오기
+                const response = await fetch(`https://api.github.com/repos/${repo}/readme`);
+                const data = await response.json();
+                // Base64 디코딩 후 UTF-8로 처리
+                const decoder = new TextDecoder('utf-8');
+                const bytes = Uint8Array.from(atob(data.content), c => c.charCodeAt(0));
+                const readmeContent = decoder.decode(bytes);
+                
+                // 마크다운을 HTML로 변환
+                modalContent.innerHTML = marked.parse(readmeContent);
+                
+                // 모달 표시
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } catch (error) {
+                console.error('README를 불러오는데 실패했습니다:', error);
+            }
+        });
+    });
+
+    // 모달 닫기
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // 모달 외부 클릭시 닫기
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }); 
