@@ -88,9 +88,7 @@ section {
 
 .section-title {
     font-size: var(--font-size-4xl);
-    background: linear-gradient(135deg, var(--text-color), var(--text-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-color);
 }
 
 /* Cards & Items */
@@ -227,7 +225,7 @@ section {
 }
 
 .intro-title h1 {
-    font-size: 2.8rem;
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
     line-height: 1.1;
     margin-bottom: var(--space-4);
     color: var(--text-color);
@@ -326,7 +324,8 @@ section {
     }
 
     .intro-title h1 {
-        font-size: 2.2rem;
+        font-size: clamp(1.2rem, 7vw, 2.2rem);
+        white-space: nowrap;
     }
 
     .intro-title .gradient-text {
@@ -350,7 +349,7 @@ section {
     }
 }
 
-/* 더 작은 화면에서만 세로 배치로 변경 */
+/* 더 작은 화면에서만 세로 배치 경 */
 @media (max-width: 480px) {
     .intro-links {
         flex-direction: column;
@@ -457,12 +456,20 @@ section {
 
 .timeline-content h3 {
     font-size: var(--font-size-xl);
-    margin-bottom: var(--space-1);
+    color: var(--text-color);
+    margin-bottom: var(--space-3);
 }
 
 .timeline-content h4 {
+    font-size: var(--font-size-lg);
     color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.timeline-content p {
     font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.6;
     margin-bottom: var(--space-3);
 }
 
@@ -473,10 +480,10 @@ section {
 }
 
 .tech-tags span {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: var(--radius-sm);
     font-size: var(--font-size-sm);
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
 }
 
 /* Projects Section */
@@ -512,6 +519,7 @@ section {
 .project-header h3 {
     font-size: var(--font-size-xl);
     color: var(--text-color);
+    margin-bottom: var(--space-3);
 }
 
 .project-tags {
@@ -522,10 +530,10 @@ section {
 }
 
 .project-tags span {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: var(--radius-sm);
     font-size: var(--font-size-sm);
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
 }
 
 .project-links {
@@ -976,19 +984,22 @@ section {
     }
 
     .timeline-content h3 {
-        font-size: var(--font-size-lg);  /* 제목 크기 줄임 */
-        word-break: keep-all;  /* 단어 단위로 줄바꿈 */
+        font-size: var(--font-size-xl);  /* 20px */
+        color: var(--text-color);
+        margin-bottom: var(--space-3);
     }
 
     .timeline-content h4 {
-        font-size: var(--font-size-base);
-        word-break: keep-all;
+        font-size: var(--font-size-lg);  /* 18px */
+        color: var(--text-secondary);
+        margin-bottom: var(--space-3);
     }
 
     .timeline-content p {
-        font-size: var(--font-size-sm);  /* 본문 텍스트 크기 줄임 */
-        word-break: keep-all;
+        font-size: var(--font-size-base);  /* 16px */
+        color: var(--text-secondary);
         line-height: 1.6;
+        margin-bottom: var(--space-3);
     }
 
     .tech-tags {
@@ -997,8 +1008,37 @@ section {
     }
 
     .tech-tags span {
-        font-size: var(--font-size-xs);  /* 태그 텍스트 크기 줄임 */
-        padding: 0.25rem 0.6rem;  /* 태그 패딩 줄임 */
+        font-size: var(--font-size-sm);  /* 14px */
+        padding: 0.3rem 0.8rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-sm);
     }
+}
+
+/* Experience Section - 모든 언어에 동일하게 적용 */
+.timeline-content h3 {
+    font-size: var(--font-size-xl);  /* 20px */
+    color: var(--text-color);
+    margin-bottom: var(--space-3);
+}
+
+.timeline-content h4 {
+    font-size: var(--font-size-lg);  /* 18px */
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.timeline-content p {
+    font-size: var(--font-size-base);  /* 16px */
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+}
+
+.tech-tags span {
+    font-size: var(--font-size-sm);  /* 14px */
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
 }
  
