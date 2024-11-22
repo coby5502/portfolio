@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>iOS Developer Portfolio</title>
+    <title>iOS Engineer Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -36,13 +36,18 @@
         <section id="intro" class="intro-section">
             <div class="container">
                 <div class="intro-content">
+                    <div class="intro-profile">
+                        <div class="profile-image">
+                            <img src="profile.jpg" alt="Coby's profile">
+                        </div>
+                    </div>
                     <div class="intro-text">
                         <div class="intro-title">
                             <h1 data-en="Hi, I'm Coby" data-ko="안녕하세요, Coby입니다" data-ja="はじめまして、Cobyです">
                                 안녕하세요, Coby입니다
                             </h1>
-                            <h2 class="gradient-text" data-en="iOS Developer" data-ko="iOS 개발자" data-ja="iOSデベロッパー">
-                                iOS 개발자
+                            <h2 class="gradient-text" data-en="iOS Engineer" data-ko="iOS 엔지니어" data-ja="iOSエンジニア">
+                                iOS 엔지니어
                             </h2>
                         </div>
                         <p class="intro-description" data-en="Building elegant iOS applications with Swift" 
@@ -123,114 +128,81 @@
         <section id="skills" class="skills-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle" data-en="SKILLS" data-ko="기술 스택" data-ja="スキル">기술 스택</span>
+                    <span class="section-subtitle" data-en="SKILLS" data-ko="기술 스택" data-ja="スキル">기술 스</span>
                     <h2 class="section-title" data-en="Technologies" data-ko="보유 기술" data-ja="技術スタック">보유 기술</h2>
                 </div>
                 <div class="skills-container">
-                    <div class="skills-category">
-                        <h3>Core</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fab fa-swift"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">Swift</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-apple"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">UIKit</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-apple"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">SwiftUI</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-swift"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">Swift</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="skills-category">
-                        <h3>Frameworks & Libraries</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fas fa-stream"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">Combine</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-stream"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">RxSwift</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-cube"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">TCA</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
+                        <div class="skill-item">
+                            <i class="fab fa-apple"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">UIKit</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="skills-category">
-                        <h3>UI & Networking</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fas fa-columns"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">AutoLayout</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-puzzle-piece"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">SnapKit</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-network-wired"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">Moya</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
+                        <div class="skill-item">
+                            <i class="fab fa-apple"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">SwiftUI</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="skills-category">
-                        <h3>CI/CD & Build Tools</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fas fa-rocket"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">Fastlane</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
+                        <div class="skill-item">
+                            <i class="fas fa-stream"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">Combine</span>
                             </div>
-                            <div class="skill-item">
-                                <i class="fas fa-tools"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">Tuist</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-stream"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">RxSwift</span>
                             </div>
-                            <div class="skill-item">
-                                <i class="fab fa-git-alt"></i>
-                                <div class="skill-info">
-                                    <span class="skill-name">Git</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cube"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">TCA</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-columns"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">AutoLayout</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">SnapKit</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-network-wired"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">Moya</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-rocket"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">Fastlane</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-tools"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">Tuist</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <div class="skill-info">
+                                <span class="skill-name">Git</span>
                             </div>
                         </div>
                     </div>
@@ -254,10 +226,6 @@
                         <a href="mailto:coby5502@gmail.com" class="contact-method">
                             <i class="fas fa-envelope"></i>
                             <span>coby5502@gmail.com</span>
-                        </a>
-                        <a href="https://github.com/coby5502" class="contact-method" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
                         </a>
                         <a href="https://linkedin.com/in/coby5502" class="contact-method" target="_blank">
                             <i class="fab fa-linkedin"></i>
