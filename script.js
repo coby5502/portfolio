@@ -83,4 +83,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 스크롤시 메뉴 닫기
     window.addEventListener('scroll', closeMenu);
+
+    // 이메일 복사 기능
+    const emailLink = document.querySelector('a[href^="mailto:"]');
+    const emailAddress = emailLink.getAttribute('href').replace('mailto:', '');
+
+    emailLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // 이메일 주소 복사
+        navigator.clipboard.writeText(emailAddress).then(() => {
+            // 복사 성공 알림 표시
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.textContent = '이메일 주소가 복사되었습니다!';
+            document.body.appendChild(notification);
+
+            // 3초 후 알림 제거
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        });
+    });
 }); 

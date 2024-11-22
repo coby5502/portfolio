@@ -926,7 +926,7 @@ section {
 /* Mobile Navigation */
 @media (max-width: 768px) {
     .logo {
-        font-size: 1.5rem;  /* 모바일에서는 기존 크기 유지 */
+        font-size: 1.5rem;  /* 모바일에서는 기존 크기 ���지 */
     }
 
     .nav {
@@ -1040,5 +1040,28 @@ section {
     padding: 0.3rem 0.8rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-sm);
+}
+
+/* 복사 알림 스타일 */
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    z-index: 1000;
+    animation: fadeInOut 3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    15% { opacity: 1; transform: translate(-50%, 0); }
+    85% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -20px); }
 }
  
