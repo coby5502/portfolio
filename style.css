@@ -946,20 +946,41 @@ section {
 
 /* Logo */
 .logo {
-    font-family: 'Clash Display', sans-serif;
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-color);
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+}
+
+.logo-text {
+    color: var(--text-color);
     transition: all 0.3s ease;
 }
 
-.logo:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+.logo-text:first-child {
+    color: var(--primary-color);
+    margin-right: 1px;
+}
+
+.logo-dot {
+    color: var(--secondary-color);
+    margin: 0 2px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-text:first-child {
+    transform: translateX(-2px);
+}
+
+.logo:hover .logo-dot {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.logo:hover .logo-text:last-child {
+    color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
