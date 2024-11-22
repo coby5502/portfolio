@@ -464,6 +464,9 @@ section {
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
     margin-bottom: var(--space-3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .timeline-content p {
@@ -471,6 +474,19 @@ section {
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.timeline-content p .period {
+    color: var(--primary-color);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content p .description {
+    color: var(--text-secondary);
 }
 
 .tech-tags {
@@ -965,7 +981,7 @@ section {
     }
 
     .nav ul li {
-        margin: 0;  /* li의 마진 제거 */
+        margin: 0;  /* li의 마진 제 */
     }
 
     .nav-link {
@@ -1071,5 +1087,69 @@ section {
     15% { opacity: 1; transform: translate(-50%, 0); }
     85% { opacity: 1; transform: translate(-50%, 0); }
     100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+.timeline-item-content {
+    margin-bottom: var(--space-4);
+}
+
+.timeline-item-title {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-item-period {
+    font-size: var(--font-size-sm);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.timeline-content h4 a {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-content h4 a:hover {
+    color: var(--primary-color);
+}
+
+.timeline-content h4 i {
+    font-size: 1.2rem;
+}
+
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: var(--space-3);
+}
+
+.company-header h4 {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.company-appstore-link {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.company-appstore-link:hover {
+    color: var(--primary-color);
 }
  
