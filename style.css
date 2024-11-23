@@ -555,15 +555,35 @@ html[lang="en"] .intro-title .gradient-text {
 .project-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: var(--space-5);
 }
 
-.project-header h3 {
+.project-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-title h3 {
     font-size: var(--font-size-xl);
     color: var(--text-color);
     margin: 0;
     line-height: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: var(--space-3);
+    height: 24px;
+    transform: translateY(-2px);
+}
+
+.project-period {
+    font-size: var(--font-size-sm);
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-top: 0.25rem;
 }
 
 .project-tags {
@@ -578,12 +598,6 @@ html[lang="en"] .intro-title .gradient-text {
     padding: 0.3rem 0.8rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-sm);
-}
-
-.project-links {
-    display: flex;
-    gap: var(--space-3);
-    height: 24px;
 }
 
 .project-links a {
@@ -755,7 +769,7 @@ html[lang="en"] .intro-title .gradient-text {
     }
 }
 
-/* 더 작은 화면에서의 조�� */
+/* 더 작은 화면에서의 조 */
 @media (max-width: 480px) {
     .header .container {
         padding: var(--space-3) var(--space-3);
@@ -1368,5 +1382,17 @@ html[lang="en"] .intro-title .gradient-text {
 
 .project-links button:hover {
     color: var(--primary-color);
+}
+
+.project-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-period {
+    font-size: var(--font-size-sm);
+    color: var(--primary-color);
+    font-weight: 500;
 }
  
