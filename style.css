@@ -538,9 +538,6 @@ html[lang="en"] .intro-title .gradient-text {
 }
 
 .timeline-item {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-5);
     margin-bottom: var(--space-6);
     padding: var(--space-6);
     background: rgba(44, 44, 46, 0.5);
@@ -551,58 +548,9 @@ html[lang="en"] .intro-title .gradient-text {
 }
 
 .timeline-item:hover {
-    background: rgba(44, 44, 46, 0.6);
+    transform: translateY(-4px);
     border-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-/* 파란 테두리 완전 제거 */
-.timeline-item,
-.timeline-item *,
-.timeline-item-content,
-.timeline-item-content *,
-.tech-tags span,
-a {
-    outline: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-    -webkit-focus-ring-color: transparent !important;
-    touch-action: manipulation;
-}
-
-.timeline-item:focus-visible,
-.timeline-item *:focus-visible,
-.timeline-item-content:focus-visible,
-.timeline-item-content *:focus-visible,
-.tech-tags span:focus-visible {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-/* 점 스타일 제거 */
-.timeline-item-description {
-    color: var(--text-secondary);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
-.timeline-item-description p {
-    margin: 0;
-    line-height: 1.5;
-    display: flex;
-    align-items: flex-start;
-}
-
-/* 기존 점 스타일 제거 */
-.timeline-item-description p::before {
-    display: none;
-}
-
-/* 호버 효과 일관성 */
-.timeline-item-content:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
+    background: rgba(44, 44, 46, 0.6);
 }
 
 .timeline-date {
@@ -632,82 +580,44 @@ a {
     margin: 0;
 }
 
-.company-appstore-link, .company-playstore-link {
+.timeline-item-description {
     color: var(--text-secondary);
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.company-appstore-link:hover, .company-playstore-link:hover {
-    color: var(--primary-color);
-}
-
-/* 디자인 일관성을 위한 수정 */
-.timeline-item-content {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius-md);
-    padding: var(--space-5);
     margin-bottom: var(--space-4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.timeline-item-title {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: var(--space-2);
+    line-height: 1.6;
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
-    margin-top: var(--space-4);
 }
 
 .tech-tags span {
     font-size: var(--font-size-sm);
-    padding: 0.4rem 0.8rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
     color: var(--text-color);
-    transition: all 0.3s ease;
 }
 
-.tech-tags span:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary-color);
-    transform: translateY(-1px);
+/* 앱스토어, 플레이스토어 링크 스타일 */
+.company-header a {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.company-header a:hover {
+    color: var(--primary-color);
 }
 
 /* 모바일 대응 */
 @media (max-width: 768px) {
     .timeline-item {
         padding: var(--space-4);
-    }
-
-    .timeline-item-content {
-        padding: var(--space-4);
-    }
-
-    .timeline-content h3 {
-        font-size: var(--font-size-xl);
-        margin-bottom: var(--space-2);
-    }
-
-    .company-header {
-        margin-bottom: var(--space-3);
-    }
-
-    .tech-tags {
-        margin-top: var(--space-3);
-    }
-
-    .tech-tags span {
-        padding: 0.4rem 0.8rem;
-        font-size: var(--font-size-xs);
     }
 }
 
@@ -1389,6 +1299,34 @@ a {
 }
 
 .company-appstore-link:hover {
+    color: var(--primary-color);
+}
+
+/* 플레이스토어 링크 스타일 추가 */
+.company-playstore-link {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.company-playstore-link:hover {
+    color: var(--primary-color);
+}
+
+/* 앱스토어, 플레이스토어 아이콘 공통 스타일 */
+.company-header a {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.company-header a:hover {
     color: var(--primary-color);
 }
 
