@@ -221,24 +221,30 @@ section {
 .intro-text {
     width: 100%;
     max-width: 540px;
+    overflow: hidden;
 }
 
 .intro-title {
     margin-bottom: var(--space-6);
+    width: 100%;
+    overflow: hidden;
 }
 
 .intro-title h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(0.7rem, 2.5vw, 2.2rem);
     line-height: 1.2;
     margin-bottom: var(--space-4);
     color: var(--text-color);
     font-weight: 700;
     letter-spacing: -0.02em;
     white-space: nowrap;
+    width: 100%;
+    transform-origin: left;
+    text-rendering: optimizeLegibility;
 }
 
 .intro-title .gradient-text {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(0.6rem, 2vw, 1.8rem);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -247,15 +253,33 @@ section {
     font-weight: 700;
     letter-spacing: -0.01em;
     white-space: nowrap;
+    width: 100%;
+    transform-origin: left;
+    text-rendering: optimizeLegibility;
 }
 
-/* 영어 모드일 때만 폰트 크기 조절 */
+/* 일본어 설정일 때 특별히 적용 */
+html[lang="ja"] .intro-title h1 {
+    font-size: clamp(1rem, 3vw, 2.5rem);
+}
+
+html[lang="ja"] .intro-title .gradient-text {
+    font-size: clamp(0.9rem, 2.2vw, 1.8rem);
+}
+
+/* 영어 모드일 때 */
 html[lang="en"] .intro-title h1 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(1.3rem, 4.8vw, 2.2rem);
+    letter-spacing: -0.04em;
+    word-spacing: -0.06em;
+    transform: scale(0.98);
 }
 
 html[lang="en"] .intro-title .gradient-text {
-    font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.1rem, 4.2vw, 1.8rem);
+    letter-spacing: -0.03em;
+    word-spacing: -0.04em;
+    transform: scale(0.98);
 }
 
 .intro-description {
@@ -316,6 +340,7 @@ html[lang="en"] .intro-title .gradient-text {
     }
 }
 
+/* 모바일 대응을 위한 미디어 쿼리 수정 */
 @media (max-width: 768px) {
     .intro-section {
         padding-top: 100px;
@@ -338,16 +363,18 @@ html[lang="en"] .intro-title .gradient-text {
         margin: 0 auto;
     }
 
-    .intro-title h1 {
-        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    .intro-title h1,
+    .intro-title .gradient-text {
+        transform-origin: center;
         text-align: center;
-        white-space: normal;
+    }
+
+    .intro-title h1 {
+        font-size: clamp(1.6rem, 5.5vw, 2.6rem);
     }
 
     .intro-title .gradient-text {
-        font-size: clamp(1.3rem, 6vw, 2rem);
-        text-align: center;
-        white-space: normal;
+        font-size: clamp(1.4rem, 5vw, 2.2rem);
     }
 
     .intro-description {
@@ -366,17 +393,32 @@ html[lang="en"] .intro-title .gradient-text {
         min-width: 140px;
     }
 
+    /* 모바일에서 일본어 설정일 때 */
+    html[lang="ja"] .intro-title h1 {
+        font-size: clamp(1.4rem, 5vw, 2.4rem);
+    }
+
+    html[lang="ja"] .intro-title .gradient-text {
+        font-size: clamp(1.2rem, 4.5vw, 2rem);
+    }
+
     /* 모바일에서 영어 모드일 때 */
     html[lang="en"] .intro-title h1 {
-        font-size: clamp(1.6rem, 6vw, 2.2rem);
+        font-size: clamp(1.3rem, 4.8vw, 2.2rem);
+        letter-spacing: -0.04em;
+        word-spacing: -0.06em;
+        transform: scale(0.98);
     }
 
     html[lang="en"] .intro-title .gradient-text {
-        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        font-size: clamp(1.1rem, 4.2vw, 1.8rem);
+        letter-spacing: -0.03em;
+        word-spacing: -0.04em;
+        transform: scale(0.98);
     }
 }
 
-/* 더 작은 화면에서만 세로 배치 경 */
+/* 더 작은 화면에서의 추가 조정 */
 @media (max-width: 480px) {
     .intro-links {
         flex-direction: column;
@@ -384,6 +426,38 @@ html[lang="en"] .intro-title .gradient-text {
 
     .contact-link, .github-link {
         width: 100%;
+    }
+
+    .intro-title h1 {
+        font-size: clamp(1.2rem, 4.5vw, 2rem);
+    }
+
+    .intro-title .gradient-text {
+        font-size: clamp(1rem, 4vw, 1.6rem);
+    }
+
+    /* 더 작은 화면에서 일본어 설정일 때 */
+    html[lang="ja"] .intro-title h1 {
+        font-size: clamp(1.3rem, 5.5vw, 2.2rem);
+    }
+
+    html[lang="ja"] .intro-title .gradient-text {
+        font-size: clamp(1.1rem, 5vw, 1.8rem);
+    }
+
+    /* 더 작은 화면에서 영어 모드일 때 */
+    html[lang="en"] .intro-title h1 {
+        font-size: clamp(1.2rem, 4.5vw, 2rem);
+        letter-spacing: -0.04em;
+        word-spacing: -0.06em;
+        transform: scale(0.96);
+    }
+
+    html[lang="en"] .intro-title .gradient-text {
+        font-size: clamp(1rem, 4vw, 1.6rem);
+        letter-spacing: -0.03em;
+        word-spacing: -0.04em;
+        transform: scale(0.96);
     }
 }
 
