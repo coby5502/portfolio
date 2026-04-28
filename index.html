@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <title>Coby's Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coby's Portfolio</title>
+    <meta name="description" content="Coby's portfolio — engineer building new value with AI.">
+    <link rel="canonical" href="https://coby5502.github.io/portfolio/">
+    <!-- Link preview: use profile photo (crawlers otherwise pick first large images e.g. badges) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Coby's Portfolio">
+    <meta property="og:description" content="Coby's portfolio — engineer building new value with AI.">
+    <meta property="og:url" content="https://coby5502.github.io/portfolio/">
+    <meta property="og:image" content="https://coby5502.github.io/portfolio/profile.jpg">
+    <meta property="og:image:alt" content="Coby profile photo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coby's Portfolio">
+    <meta name="twitter:description" content="Coby's portfolio — engineer building new value with AI.">
+    <meta name="twitter:image" content="https://coby5502.github.io/portfolio/profile.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -51,9 +64,9 @@
                 </ul>
             </nav>
             <div class="language-selector">
-                <button class="lang-btn" data-lang="ko">KO</button>
-                <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="ja">JP</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ko">KO</button>
             </div>
         </div>
     </header>
@@ -69,33 +82,34 @@
                     </div>
                     <div class="intro-text">
                         <div class="intro-title">
-                            <h1 data-en="Hello, I'm Coby" 
-                                data-ko="안녕하세요, Coby입니다" 
-                                data-ja="こんにちは、Cobyです">
-                                안녕하세요, Coby입니다
+                            <h1 data-en="Hello, I'm Coby." 
+                                data-ko="안녕하세요, Coby입니다." 
+                                data-ja="こんにちは、Cobyです。">
+                                こんにちは、Cobyです。
                             </h1>
                             <h2 class="gradient-text" 
-                                data-en="Crafting Experiences, Mobile Engineer" 
-                                data-ko="경험을 담아내는 모바일 엔지니어" 
-                                data-ja="体験を描く、モバイルエンジニア">
-                                경험을 담아내는 모바일 엔지니어
+                                data-en="An engineer creating new value with AI" 
+                                data-ko="AI와 함께 새로운 가치를 만드는 엔지니어" 
+                                data-ja="AIとともに新しい価値をつくるエンジニア">
+                                AIとともに新しい価値をつくるエンジニア
                             </h2>
                         </div>
                         <p class="intro-description" 
-                           data-en="I believe that good code prioritizes readability over technical complexity. I continuously study technology to improve product quality and have the ability to deeply consider UI/UX for user immersion." 
-                           data-ko="좋은 코드는 높은 기술적 수준보다 읽기 쉬운 코드라고 생각합니다. 기술적인 면에서도 끊임없이 공부해서 프로덕트 품질 향상에도 노력하며, 사용자가 제품에 몰입할 수 있도록 UI/UX에 깊이 고민할 수 있는 능력이 있습니다." 
-                           data-ja="良いコードは高い技術レベルよりも読みやすいコードだと考えています。技術的な面でも絶え間なく勉強してプロダクト品質向上にも努め、ユーザーが製品に没入できるようUI/UXに深く考察できる能力があります。">
-                            좋은 코드는 높은 기술적 수준보다 읽기 쉬운 코드라고 생각합니다. 기술적인 면에서도 끊임없이 공부해서 프로덕트 품질 향상에도 노력하며, 사용자가 제품에 몰입할 수 있도록 UI/UX에 깊이 고민할 수 있는 능력이 있습니다.
-                        </p><p class="intro-description" 
-                           data-en="My specialty is creating services by adding meaningful stories to technology, inspired by everyday life experiences. I feel happiness when people around me enjoy my services." 
-                           data-ko="일상생활의 경험에서 영감을 받아 기술에 의미 있는 스토리를 더해 서비스를 만드는 것이 특기입니다. 제 서비스를 통해 주변 사람들이 즐길 때 행복함을 느낍니다." 
-                           data-ja="日常生活の経験からインスピレーションを得て、技術に意味のあるストーリーを加えてサービスを作ることが特技です。自分のサービスを通じて周りの人々が楽しむ時に幸せを感じます。">
-                            일상생활의 경험에서 영감을 받아 기술에 의미 있는 스토리를 더해 서비스를 만드는 것이 특기입니다. 제 서비스를 통해 주변 사람들이 즐길 때 행복함을 느낍니다.
+                           data-en="I don't think AI erases developers. It's an era where we ship higher-quality code faster—and focus more on problems that truly matter." 
+                           data-ko="AI로 개발자가 사라진다고 보지 않습니다. 더 빠르게 고수준 코드를 구현하고, 본질적 문제에 집중할 수 있는 시대라고 생각합니다." 
+                           data-ja="AIで開発者が消えるとは思いません。より速く高水準のコードを届け、本質的な課題により集中できる時代だと考えています。">
+                            AIで開発者が消えるとは思いません。より速く高水準のコードを届け、本質的な課題により集中できる時代だと考えています。
+                        </p>
+                        <p class="intro-description" 
+                           data-en="In that shift, I refine UI/UX through steady tries—efficient yet engaging. I prototype fast, learn from experiments, and aim to ship services that stay meaningful." 
+                           data-ko="그 변화 속에서 다양한 시도로 UI/UX를 다듬고, 효율적이면서 몰입 있는 경험을 만들고 싶습니다. 아이디어를 빠르게 구현·실험하며, 의미 있는 서비스를 만드는 엔지니어를 지향합니다." 
+                           data-ja="その変化の中で試行錯誤しながらUI/UXを磨き、効率と没入が両立する体験をつくりたいです。アイデアを素早く形にして学び、意味の続くサービスを届けるエンジニアを目指します。">
+                            その変化の中で試行錯誤しながらUI/UXを磨き、効率と没入が両立する体験をつくりたいです。アイデアを素早く形にして学び、意味の続くサービスを届けるエンジニアを目指します。
                         </p>
                         <div class="intro-links">
                             <a href="#contact" class="contact-link">
                                 <i class="fas fa-paper-plane"></i>
-                                <span data-en="Get in touch" data-ko="연락하기" data-ja="連絡する">연락하기</span>
+                                <span data-en="Get in touch" data-ko="연락하기" data-ja="連絡する">連絡する</span>
                             </a>
                             <a href="https://github.com/coby5502" class="github-link" target="_blank">
                                 <i class="fab fa-github"></i>
