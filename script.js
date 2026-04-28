@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const langButtons = document.querySelectorAll('.lang-btn');
-    let currentLang = 'en';
+    let currentLang = 'ja';
 
     // 언어 변경 함수
     function changeLanguage(lang) {
@@ -28,13 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 브라우저 언어 감지 및 초기 설정
-    const browserLang = navigator.language.split('-')[0];
-    if (['ko', 'en', 'ja'].includes(browserLang)) {
-        changeLanguage(browserLang);
-    } else {
-        changeLanguage('en');
-    }
+    // Default: Japanese (JP / EN / KO order in header)
+    changeLanguage('ja');
 
     // 모바일 메뉴 관련
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -99,14 +94,14 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         // 현재 설정된 언어 확인
-        const currentLang = document.documentElement.lang || 'en';
+        const currentLang = document.documentElement.lang || 'ja';
         
         // 이메일 주소 복사
         navigator.clipboard.writeText(emailAddress).then(() => {
             // 현재 언어에 맞는 메시지로 알림 표시
             const notification = document.createElement('div');
             notification.className = 'copy-notification';
-            notification.textContent = copyMessages[currentLang] || copyMessages.en;
+            notification.textContent = copyMessages[currentLang] || copyMessages.ja;
             document.body.appendChild(notification);
 
             // 3초 후 알림 제거
